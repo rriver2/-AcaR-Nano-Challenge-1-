@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct KPTReflectionView: View {
+    @Binding var isFullScreen : Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+        Text("Hello, World!")
+        }
     }
 }
 
 struct KPTReflectionView_Previews: PreviewProvider {
+    @State static var isFullScreen : Bool = false
+    
     static var previews: some View {
-        KPTReflectionView()
+        KPTReflectionView(isFullScreen: $isFullScreen)
     }
 }

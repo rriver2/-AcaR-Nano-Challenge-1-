@@ -15,4 +15,5 @@ extension Color {
     static let pointGreen = Color("pointGreen")
     static let lightGreen = Color("lightGreen")
     static let lightGray = Color("lightGray")
+    static let lightBlack = Color("lightBlack")
 }

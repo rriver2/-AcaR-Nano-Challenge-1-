@@ -16,50 +16,93 @@ struct MainView: View {
     
     @State private var showActionSheet = false
     @State private var showQuestionReflectionView = false
-    //    @State private var showActionSheet = false
-    //    @State private var showActionSheet = false
+    @State private var showDiaryReflectionView = false
+    @State private var showKPTReflectionView = false
+    
+    @State private var showChallengeView = false
+    @State private var challengeType : String = "MC1"
     
     var body: some View {
-        VStack(spacing : 0){
-            topContent
-            bottomCircles
-            
-            NavigationLink(destination: QuestionReflectionView(isShow : $showQuestionReflectionView),
-                           isActive: $showQuestionReflectionView) {
+        NavigationView{
+            VStack(spacing : 0){
+                topContent
+                
+                LazyVGrid(columns: columns) {
+                    ForEach(vm.challenges.indices, id: \.self){ index in
+                        
+                        let challenge = vm.challenges[index]
+                        
+                        let reflectionCount = Challenges.reflections.filter { reflection in
+                            return reflection.key == challenge.key
+                        }.count
+                        
+                        Button(action: {
+                            showChallengeView = true
+                            challengeType = challenge.key
+                        }) {
+                            ZStack{
+                                Circle()
+                                    .strokeBorder(Color.pointGreen)
+                                    .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
+                                Text(challenge.key)
+                                    .font(.system(size: 25))
+                                    .fontWeight(.regular)
+                            }
+                            .foregroundColor(Color.lightBlack)
+                        }
+                        .padding(.bottom)
+                        .overlay(alignment: .topLeading) {
+                            ZStack{
+                                Circle()
+                                    .foregroundColor(Color.white)
+                                    .frame(width: 30, height: 30)
+                                Text("\(reflectionCount)")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 15))
+                                    .foregroundColor(Color.pointGreen)
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                
+                NavigationLink(destination: ChallengeView(isShow : $showChallengeView, challengetype: challengeType),
+                               isActive: $showChallengeView) {
+                }
             }
-//            NavigationLink(destination: QuestionReflectionView(),
-//                           isActive: $showQuestionReflectionView) {
-//                Text("Reflection")
-//            }
-//            NavigationLink(destination: QuestionReflectionView(),
-//                           isActive: $showQuestionReflectionView) {
-//                Text("Reflection")
-//            }
-//
+            .navigationBarItems(trailing: Button(action : {
+                showActionSheet = true
+            }){
+                Text("+")
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 40))
+            })
+            .confirmationDialog("", isPresented: $showActionSheet) {
+                Button(action: {
+                    showQuestionReflectionView = true
+                }) {
+                    Text("질문")
+                }
+                Button(action: {
+                    showDiaryReflectionView = true
+                }) {
+                    Text("일기")
+                }
+                Button(action: {
+                    showQuestionReflectionView = true
+                }) {
+                    Text("KPT")
+                }
+            }
         }
-        .navigationBarItems(trailing: Button(action : {
-            showActionSheet = true
-        }){
-            Text("+")
-                .foregroundColor(Color.white)
-                .font(.system(size: 40))
-        })
-        .confirmationDialog("", isPresented: $showActionSheet) {
-            Button(action: {
-                showQuestionReflectionView = true
-            }) {
-                Text("질문")
-            }
-            Button(action: {
-                
-            }) {
-                Text("일기")
-            }
-            Button(action: {
-                
-            }) {
-                Text("KPT")
-            }
+        .fullScreenCover(isPresented: $showQuestionReflectionView) {
+            QuestionReflectionSelectView(isFullScreen: $showQuestionReflectionView)
+        }
+        .fullScreenCover(isPresented: $showDiaryReflectionView) {
+            DiaryReflectionView(isFullScreen: $showDiaryReflectionView)
+        }
+        .fullScreenCover(isPresented: $showKPTReflectionView) {
+            KPTReflectionView(isFullScreen: $showQuestionReflectionView)
         }
     }
 }
@@ -80,41 +123,6 @@ extension MainView {
                     .font(.system(size: 25))
                     .fontWeight(.regular)
                     .lineSpacing(10)
-            }
-        }
-    }
-    
-    private var bottomCircles : some View {
-        LazyVGrid(columns: columns) {
-            ForEach(vm.challenges) { challenge in
-                
-                let reflectionCount = challenge.reflections.count
-                
-                ChallengeCircle(challengeTitle : challenge.challengeTitle, reflectionCount : reflectionCount)
-            }
-        }
-        .padding(.horizontal)
-    }
-
-    func ChallengeCircle(challengeTitle : String, reflectionCount : Int) -> some View{
-        ZStack{
-            Circle()
-                .strokeBorder(Color.pointGreen)
-                .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
-            Text(challengeTitle)
-                .font(.system(size: 25))
-                .fontWeight(.regular)
-        }
-        .padding(.bottom)
-        .overlay(alignment: .topLeading) {
-            ZStack{
-                Circle()
-                    .foregroundColor(Color.white)
-                    .frame(width: 30, height: 30)
-                Text("\(reflectionCount)")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 15))
-                    .foregroundColor(Color.pointGreen)
             }
         }
     }
