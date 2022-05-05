@@ -35,8 +35,3 @@ Apple Developer Academy 여정을 위한 회고 앱 Acar은 회고 가이드를 
 
 
 <br></br>
-## :books: Documentation
-
-[Documentation](https://linktodocumentation)
-
-<br></br>
