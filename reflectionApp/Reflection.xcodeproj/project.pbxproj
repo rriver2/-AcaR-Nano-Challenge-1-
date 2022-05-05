@@ -15,6 +15,8 @@
 		CC28D80A28200A2100C7F410 /* DiaryReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28D80928200A2100C7F410 /* DiaryReflectionView.swift */; };
 		CC28D80C28200A2E00C7F410 /* KPTReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28D80B28200A2E00C7F410 /* KPTReflectionView.swift */; };
 		CC28D80F2820AA7B00C7F410 /* QuestionReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28D80E2820AA7B00C7F410 /* QuestionReflectionView.swift */; };
+		CC6E5CED28221F4400CF79FF /* ChallengeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E5CEC28221F4400CF79FF /* ChallengeMenuView.swift */; };
+		CC6E5CEF28222A8B00CF79FF /* ChallengeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E5CEE28222A8B00CF79FF /* ChallengeEditView.swift */; };
 		CC74C0A5282128DB001E8B05 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74C0A4282128DB001E8B05 /* ChallengeView.swift */; };
 		CCDC4ABB281B66E600E7DF6A /* ReflectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC4ABA281B66E600E7DF6A /* ReflectionApp.swift */; };
 		CCDC4ABD281B66E600E7DF6A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC4ABC281B66E600E7DF6A /* MainView.swift */; };
@@ -31,6 +33,8 @@
 		CC28D80928200A2100C7F410 /* DiaryReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReflectionView.swift; sourceTree = "<group>"; };
 		CC28D80B28200A2E00C7F410 /* KPTReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPTReflectionView.swift; sourceTree = "<group>"; };
 		CC28D80E2820AA7B00C7F410 /* QuestionReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReflectionView.swift; sourceTree = "<group>"; };
+		CC6E5CEC28221F4400CF79FF /* ChallengeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeMenuView.swift; sourceTree = "<group>"; };
+		CC6E5CEE28222A8B00CF79FF /* ChallengeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditView.swift; sourceTree = "<group>"; };
 		CC74C0A4282128DB001E8B05 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		CCDC4AB7281B66E600E7DF6A /* Reflection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reflection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDC4ABA281B66E600E7DF6A /* ReflectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionApp.swift; sourceTree = "<group>"; };
@@ -56,7 +60,7 @@
 				CC28D80D2820AA6900C7F410 /* Question */,
 				CC28D80928200A2100C7F410 /* DiaryReflectionView.swift */,
 				CC28D80B28200A2E00C7F410 /* KPTReflectionView.swift */,
-				CC74C0A4282128DB001E8B05 /* ChallengeView.swift */,
+				CC6E5CEC28221F4400CF79FF /* ChallengeMenuView.swift */,
 			);
 			path = RefectionRecord;
 			sourceTree = "<group>";
@@ -113,6 +117,8 @@
 			children = (
 				CCDC4ABC281B66E600E7DF6A /* MainView.swift */,
 				CC28D7FF281F634E00C7F410 /* ContentView.swift */,
+				CC74C0A4282128DB001E8B05 /* ChallengeView.swift */,
+				CC6E5CEE28222A8B00CF79FF /* ChallengeEditView.swift */,
 				CC28D8082820068E00C7F410 /* RefectionRecord */,
 			);
 			path = View;
@@ -202,9 +208,11 @@
 				CC74C0A5282128DB001E8B05 /* ChallengeView.swift in Sources */,
 				CC28D807281FEFCB00C7F410 /* Color.swift in Sources */,
 				CC28D80A28200A2100C7F410 /* DiaryReflectionView.swift in Sources */,
+				CC6E5CEF28222A8B00CF79FF /* ChallengeEditView.swift in Sources */,
 				CC28D800281F634E00C7F410 /* ContentView.swift in Sources */,
 				CC28D7FC281F633700C7F410 /* QuestionReflectionSelectView.swift in Sources */,
 				CC28D805281FE0C500C7F410 /* ChallengeViewModel.swift in Sources */,
+				CC6E5CED28221F4400CF79FF /* ChallengeMenuView.swift in Sources */,
 				CC28D80C28200A2E00C7F410 /* KPTReflectionView.swift in Sources */,
 				CCDC4ABB281B66E600E7DF6A /* ReflectionApp.swift in Sources */,
 			);

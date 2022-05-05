@@ -9,10 +9,9 @@ import SwiftUI
 
 
 struct MainView: View {
-    var columns: [GridItem] =
-    Array(repeating: .init(.flexible()), count: 3)
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    @EnvironmentObject private var vm : ReflectionViewModel
+    @StateObject var challengeViewModel : ChallengesViewModel = ChallengesViewModel()
     
     @State private var showActionSheet = false
     @State private var showQuestionReflectionView = false
@@ -28,11 +27,11 @@ struct MainView: View {
                 topContent
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(vm.challenges.indices, id: \.self){ index in
+                    ForEach(challengeViewModel.challenges.indices, id: \.self){ index in
                         
-                        let challenge = vm.challenges[index]
+                        let challenge = challengeViewModel.challenges[index]
                         
-                        let reflectionCount = Challenges.reflections.filter { reflection in
+                        let reflectionCount = challengeViewModel.reflections.filter { reflection in
                             return reflection.key == challenge.key
                         }.count
                         
@@ -52,32 +51,35 @@ struct MainView: View {
                         }
                         .padding(.bottom)
                         .overlay(alignment: .topLeading) {
-                            ZStack{
-                                Circle()
-                                    .foregroundColor(Color.white)
-                                    .frame(width: 30, height: 30)
-                                Text("\(reflectionCount)")
-                                    .fontWeight(.semibold)
-                                    .font(.system(size: 15))
-                                    .foregroundColor(Color.pointGreen)
+                            
+                            if(Int(reflectionCount) > 0){
+                                ZStack{
+                                    Circle()
+                                        .foregroundColor(Color.white)
+                                        .frame(width: 30, height: 30)
+                                    Text("\(reflectionCount)")
+                                        .fontWeight(.semibold)
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color.pointGreen)
+                                }
                             }
                         }
                     }
                 }
                 .padding(.horizontal)
                 
-                NavigationLink(destination: ChallengeView(isShow : $showChallengeView, challengetype: challengeType),
+                NavigationLink(destination: ChallengeView(isShow : $showChallengeView, challengetype: challengeType, challengeViewModel: challengeViewModel),
                                isActive: $showChallengeView) {
                 }
             }
             .navigationBarItems(trailing: Button(action : {
                 showActionSheet = true
             }){
-                Text("+")
+                Image(systemName: "plus")
                     .foregroundColor(Color.white)
-                    .font(.system(size: 40))
+                    .font(.system(size: 20))
             })
-            .confirmationDialog("", isPresented: $showActionSheet) {
+            .confirmationDialog("회고 형식을 골라주세요 :) ", isPresented: $showActionSheet, titleVisibility: .visible) {
                 Button(action: {
                     showQuestionReflectionView = true
                 }) {
@@ -89,21 +91,22 @@ struct MainView: View {
                     Text("일기")
                 }
                 Button(action: {
-                    showQuestionReflectionView = true
+                    showKPTReflectionView = true
                 }) {
                     Text("KPT")
                 }
             }
         }
         .fullScreenCover(isPresented: $showQuestionReflectionView) {
-            QuestionReflectionSelectView(isFullScreen: $showQuestionReflectionView)
+            QuestionReflectionSelectView(isFullScreen: $showQuestionReflectionView, challengeViewModel: challengeViewModel)
         }
         .fullScreenCover(isPresented: $showDiaryReflectionView) {
-            DiaryReflectionView(isFullScreen: $showDiaryReflectionView)
+            DiaryReflectionView(isFullScreen: $showDiaryReflectionView, challengeViewModel : challengeViewModel)
         }
         .fullScreenCover(isPresented: $showKPTReflectionView) {
-            KPTReflectionView(isFullScreen: $showQuestionReflectionView)
+            KPTReflectionView(isFullScreen: $showKPTReflectionView, challengeViewModel : challengeViewModel)
         }
+        .accentColor(Color.pointGreen)
     }
 }
 
@@ -128,18 +131,8 @@ extension MainView {
     }
 }
 
-//struct ChallengeCircle : View{
-//    var challengeTitle : String
-//    var reflectionCount : Int
-//
-//    var body: some View {
-//
-//    }
-//}
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(ReflectionViewModel())
     }
 }

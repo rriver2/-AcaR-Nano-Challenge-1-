@@ -10,11 +10,9 @@ import SwiftUI
 @main
 struct ReflectionApp: App {
     
-    
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(ReflectionViewModel())
         }
     }
 }

@@ -15,6 +15,8 @@ struct DiaryReflectionView: View {
     @State private var title : String = ""
     @State private var context : String = ""
     
+    @ObservedObject var challengeViewModel : ChallengesViewModel
+    
     var body: some View {
         VStack{
             HStack{
@@ -23,19 +25,26 @@ struct DiaryReflectionView: View {
                 }) {
                     Image(systemName: "xmark")
                         .font(Font.system(size: 13, weight: .semibold))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.pointGreen)
                 }
                 Spacer()
                 Text("Reflection")
                 Spacer()
                 Button(action: {
-                    // 저장하는 코드
+                        let maxId = challengeViewModel.reflections.max{ a, b in
+                            a.id < b.id
+                        }
+                        let reflection = Reflection(reflectionType: ReflectionType.Diary, date: Date(), content: [title, context], key: previewChallenge, id: maxId!.id+1)
+                        
+                        challengeViewModel.addReflections(reflection: reflection)
+                        
+                        isFullScreen = false
                 }) {
                     Image(systemName: "checkmark")
                         .font(Font.system(size: 13, weight: .semibold))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.pointGreen)
                 }
-            }
+            }.foregroundColor(Color.pointGreen)
             VStack{
                 ChallengeMenuView(showDropDown : $showDropDown)
             }
@@ -60,11 +69,12 @@ struct DiaryReflectionView: View {
 }
 
 struct DiaryReflectionView_Previews: PreviewProvider {
+    @ObservedObject static var challengeViewModel : ChallengesViewModel = ChallengesViewModel()
     
     @State static var isFullScreen : Bool = false
     @AppStorage("previewChallenge") var previewChallenge = "MC1"
     
     static var previews: some View {
-        DiaryReflectionView(isFullScreen : $isFullScreen)
+        DiaryReflectionView(isFullScreen : $isFullScreen, challengeViewModel: challengeViewModel)
     }
 }
