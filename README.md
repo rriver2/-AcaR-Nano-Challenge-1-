@@ -1,5 +1,4 @@
-
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![Uploading smartmockups_l2sxhb8e.jpg…]()
 
 
 # :iphone: AcaR (NC1)
