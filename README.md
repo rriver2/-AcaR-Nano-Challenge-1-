@@ -23,14 +23,14 @@ Apple Developer Academy 여정을 위한 회고 앱 Acar은 회고 가이드를 
 
 ## :fireworks: Screenshots
 <div>
-<img width="337" alt="스크린샷 2022-05-05 오후 5 20 17" src="https://user-images.githubusercontent.com/82457928/166886753-2d38e70b-a444-4ee3-a473-2263c92c466f.png">
-<img width="321" alt="스크린샷 2022-05-05 오후 5 20 27" src="https://user-images.githubusercontent.com/82457928/166886763-22124298-7746-4c26-a7d3-dc9049d4ec16.png">
-<img width="324" alt="스크린샷 2022-05-05 오후 5 20 45" src="https://user-images.githubusercontent.com/82457928/166886773-3c285336-4cdc-4f70-8f2e-a742dc9b73e0.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 20 17" src="https://user-images.githubusercontent.com/82457928/166886753-2d38e70b-a444-4ee3-a473-2263c92c466f.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 20 27" src="https://user-images.githubusercontent.com/82457928/166886763-22124298-7746-4c26-a7d3-dc9049d4ec16.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 20 45" src="https://user-images.githubusercontent.com/82457928/166886773-3c285336-4cdc-4f70-8f2e-a742dc9b73e0.png">
  </div>
  <div>
-<img width="331" alt="스크린샷 2022-05-05 오후 5 21 27" src="https://user-images.githubusercontent.com/82457928/166886779-cce5ebe9-cac6-41fa-a59d-f4d56102a598.png">
-<img width="328" alt="스크린샷 2022-05-05 오후 5 21 42" src="https://user-images.githubusercontent.com/82457928/166886788-8b311e33-7ab7-42aa-b10e-06321dc1fdf1.png">
-<img width="325" alt="스크린샷 2022-05-05 오후 5 21 56" src="https://user-images.githubusercontent.com/82457928/166886796-c0e2519b-63d5-4eb1-be01-2e3250e3ecb2.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 21 27" src="https://user-images.githubusercontent.com/82457928/166886779-cce5ebe9-cac6-41fa-a59d-f4d56102a598.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 21 42" src="https://user-images.githubusercontent.com/82457928/166886788-8b311e33-7ab7-42aa-b10e-06321dc1fdf1.png">
+<img width="250" alt="스크린샷 2022-05-05 오후 5 21 56" src="https://user-images.githubusercontent.com/82457928/166886796-c0e2519b-63d5-4eb1-be01-2e3250e3ecb2.png">
  </div>
 
 
