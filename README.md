@@ -1,28 +1,24 @@
-![Uploading smartmockups_l2sxhb8e.jpg…]()
 
 
 # :iphone: AcaR (NC1)
 ### Reflection App for Apple Developer Academy Student
 
-Apple Developer Academy 여정을 위한 회고 앱 Acar은 </br>
-회고 가이드를 제시해주어 의미있게 회고 할 수 있도록 돕고</br>
-Challenge 별로 회고를 편하게 기록할 수 있습니다 :)
+<img width="700" alt="스크린샷 2022-05-05 오후 5 20 45" src="https://user-images.githubusercontent.com/82457928/166915433-29beec90-b7d4-4f68-8a94-9e3256627139.jpg">
+
+Apple Developer Academy 여정을 위한 회고 앱 Acar은 회고 가이드를 제시해주어 </br>
+의미있게 회고 할 수 있도록 돕고 Challenge 별로 회고를 모아서 기록할 수 있습니다 :)
 
 <br></br>
-## :pushpin: Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
-<br></br>
 ## :framed_picture: Demo
-### 회고 가이드를 제시해주어 의미있게 회고 할 수 있도록 도와줍니다 !
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/82457928/166897608-5e5afa6f-a2a0-401d-bf18-2a6a85e45ae7.gif)
+### - 회고 가이드를 제시해주어 의미있게 회고 할 수 있도록 도와줍니다 ! 
+### - 챌린지 별로 함께 했었던 팀원과 챌린지 기간동안의 Goal을 작성할 수 있어요 !
+<div>
+<img width="337" alt="스크린샷 2022-05-05 오후 5 20 17" src="https://user-images.githubusercontent.com/82457928/166897608-5e5afa6f-a2a0-401d-bf18-2a6a85e45ae7.gif">
 
-### 챌린지 별로 함께 했었던 팀원과 챌린지 기간동안의 Goal을 작성할 수 있어요 !
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/82457928/166897599-988548d3-33ce-4d9d-83b2-b2a3d9f2bae0.gif)
+<img width="337" alt="스크린샷 2022-05-05 오후 5 20 17" src="https://user-images.githubusercontent.com/82457928/166897599-988548d3-33ce-4d9d-83b2-b2a3d9f2bae0.gif">
+</div>
+
 <br></br>
 
 ## :fireworks: Screenshots
@@ -37,9 +33,6 @@ Challenge 별로 회고를 편하게 기록할 수 있습니다 :)
 <img width="325" alt="스크린샷 2022-05-05 오후 5 21 56" src="https://user-images.githubusercontent.com/82457928/166886796-c0e2519b-63d5-4eb1-be01-2e3250e3ecb2.png">
  </div>
 
-<br></br>
-## :sparkles: Skills & Tech Stack
-swiftUI ...
 
 <br></br>
 ## :books: Documentation
