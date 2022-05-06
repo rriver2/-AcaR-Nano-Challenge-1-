@@ -1,6 +1,10 @@
 
 
+
+<img width="800" alt="스크린샷 2022-05-06 오후 2 57 16" src="https://user-images.githubusercontent.com/82457928/167075520-a636af05-e777-45b7-ab7a-fbe2498139af.png">
+
 # :iphone: AcaR (NC1)
+
 ### Reflection App for Apple Developer Academy Student
 
 <img width="700" alt="스크린샷 2022-05-05 오후 5 20 45" src="https://user-images.githubusercontent.com/82457928/166915433-29beec90-b7d4-4f68-8a94-9e3256627139.jpg">
